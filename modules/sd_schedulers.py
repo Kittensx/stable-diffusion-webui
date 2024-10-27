@@ -3,6 +3,7 @@ import torch
 import k_diffusion
 import numpy as np
 from scipy import stats
+import modules.simple_karras_exponential_scheduler as simple_kes
 
 from modules import shared
 
@@ -140,6 +141,7 @@ schedulers = [
     Scheduler('normal', 'Normal', normal_scheduler, need_inner_model=True),
     Scheduler('ddim', 'DDIM', ddim_scheduler, need_inner_model=True),
     Scheduler('beta', 'Beta', beta_scheduler, need_inner_model=True),
+    Scheduler('karras_exponential', 'Karras Exponential', simple_kes.simple_karras_exponential_scheduler), 
 ]
 
 schedulers_map = {**{x.name: x for x in schedulers}, **{x.label: x for x in schedulers}}
