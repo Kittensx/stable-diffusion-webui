@@ -32,3 +32,5 @@ torchdiffeq
 torchsde
 transformers==4.30.2
 pillow-avif-plugin==1.4.3
+watchdog==5.0.3
+k_diffusion
